@@ -1,0 +1,19 @@
+[
+    {
+        "modid":"floralarcana",
+        "name":"Floral Arcana",
+        "version":"${version}",
+        "description":"Adding magical flowers and agricultural resources",
+        "mcversion":"${mcversion}",
+        "url":"https://github.com/s0cks/FloralArcana",
+        "updateUrl":"",
+        "authorList":[
+            "Asyncronos"
+        ],
+        "credits":"Asyncronos, TennePG",
+        "logoFile":"banner.png",
+        "screenshots":[
+
+        ]
+    }
+]

@@ -1,0 +1,66 @@
+apply plugin: 'forge'
+apply from: "gradle/scripts/properties.gradle"
+apply from: "gradle/scripts/dependencies.gradle"
+apply from: "gradle/scripts/artifacts.gradle"
+
+buildscript{
+    repositories{
+        mavenCentral()
+        maven{
+            name = "Forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+
+        maven{
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+    }
+
+    dependencies{
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+version = config.version
+group = config.group
+archivesBaseName = config.archivesBaseName
+
+jar{
+    include "floralarcana/**"
+    include "assets/**"
+    include "mcmod.info"
+    include "lore.json"
+    include "banner.png"
+}
+
+minecraft{
+    version = config.minecraft_version + "-" + config.forge_version
+    replace "@version@", project.version
+    runDir = "run"
+}
+
+sourceSets{
+    main{
+        java{
+            srcDirs += "src/main/java"
+        }
+
+        resources{
+            srcDir "src/main/resources/"
+            include "lore.json"
+            include "assets/floralarcana/lang/*.lang",
+                    "assets/floralarcana/textures/block/*",
+                    "assets/floralarcana/textures/guis/*",
+                    "assets/floralarcana/textures/models/*",
+                    "assets/floralarcana/textures/items/*"
+        }
+    }
+}
+
+processResources{
+    from(sourceSets.main.resources.srcDirs){
+        include "mcmod.info"
+        expand "version": project.version, "mcversion":config.minecraft_version
+    }
+}
