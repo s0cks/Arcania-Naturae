@@ -1,4 +1,4 @@
-package floralarcana.common;
+package arcananaturalae.common;
 
 import net.minecraft.item.ItemStack;
 import thaumcraft.api.ItemApi;

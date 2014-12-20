@@ -1,10 +1,10 @@
-package floralarcana.common;
+package arcananaturalae.common;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import floralarcana.common.block.BlockCrystallizedFlower;
+import arcananaturalae.common.block.BlockCrystallizedFlower;
 import net.minecraft.block.Block;
 
-public final class FABlocks{
+public final class ANBlocks{
     public static final Block blockAirShardFlower = new BlockCrystallizedFlower(ThaumcraftItems.itemAirShard)
             .setBlockName("airShardFlower");
     public static final Block blockFireShardFlower = new BlockCrystallizedFlower(ThaumcraftItems.itemFireShard)

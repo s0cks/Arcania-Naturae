@@ -1,5 +1,6 @@
-package floralarcana.common.block;
+package arcananaturalae.common.block;
 
+import arcananaturalae.common.utils.StackList;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
@@ -9,7 +10,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 
 public final class BlockCrystallizedFlower
-extends FABlock{
+extends ANBlock{
     private final ItemStack shard;
 
     public BlockCrystallizedFlower(ItemStack shard){
@@ -19,9 +20,7 @@ extends FABlock{
 
     @Override
     public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
-        ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
-        drops.add(this.shard);
-        return drops;
+        return new StackList().addStack(this.shard);
     }
 
     public static Block fromNBT(NBTTagCompound comp){

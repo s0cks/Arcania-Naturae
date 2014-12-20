@@ -1,10 +1,10 @@
-package floralarcana.common;
+package arcananaturalae.common;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public final class FAGuiHandler
+public final class ANGuiHandler
 implements IGuiHandler{
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z){

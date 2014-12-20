@@ -27,7 +27,7 @@ group = config.group
 archivesBaseName = config.archivesBaseName
 
 jar{
-    include "floralarcana/**"
+    include "arcananaturalae/**"
     include "assets/**"
     include "mcmod.info"
     include "lore.json"
@@ -49,11 +49,11 @@ sourceSets{
         resources{
             srcDir "src/main/resources/"
             include "lore.json"
-            include "assets/floralarcana/lang/*.lang",
-                    "assets/floralarcana/textures/block/*",
-                    "assets/floralarcana/textures/guis/*",
-                    "assets/floralarcana/textures/models/*",
-                    "assets/floralarcana/textures/items/*"
+            include "assets/arcananaturalae/lang/*.lang",
+                    "assets/arcananaturalae/textures/block/*",
+                    "assets/arcananaturalae/textures/guis/*",
+                    "assets/arcananaturalae/textures/models/*",
+                    "assets/arcananaturalae/textures/items/*"
         }
     }
 }

@@ -1,8 +1,8 @@
-package floralarcana.client.nei;
+package arcananaturalae.client.nei;
 
 import codechicken.nei.api.IConfigureNEI;
 
-public final class NEIFloralArcanaConfig
+public final class NEIArcanaNaturalaeConfig
 implements IConfigureNEI{
     @Override
     public void loadConfig(){

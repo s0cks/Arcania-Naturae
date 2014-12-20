@@ -1,4 +1,4 @@
-package floralarcana.client.waila;
+package arcananaturalae.client.waila;
 
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;

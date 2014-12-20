@@ -1,5 +1,6 @@
-package floralarcana.common;
+package arcananaturalae.common;
 
+import arcananaturalae.common.network.ANPacketHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -12,27 +13,26 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-import floralarcana.common.block.BlockCrystallizedFlower;
-import floralarcana.common.network.FAPacketHandler;
+import arcananaturalae.common.block.BlockCrystallizedFlower;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = "floralarcana", version = "0.0.0.0", name = "Floral Arcana", dependencies = "", useMetadata = true)
-public final class FloralArcana{
+@Mod(modid = "arcananaturalae", version = "0.0.0.0", name = "Arcana Naturalae", dependencies = "", useMetadata = true)
+public final class ArcanaNaturalae{
     @SidedProxy(
-            clientSide = "floralarcana.client.ClientProxy",
-            serverSide = "floralarcana.common.CommonProxy"
+            clientSide = "arcananaturalae.client.ClientProxy",
+            serverSide = "arcananaturalae.common.CommonProxy"
     )
     public static CommonProxy proxy;
 
-    @Instance("floralarcana")
-    public static FloralArcana instance;
+    @Instance("arcananaturalae")
+    public static ArcanaNaturalae instance;
 
-    public static final Logger LOGGER = LogManager.getLogger(FloralArcana.class);
-    public static final CreativeTabs TAB = new CreativeTabs("floralarcana"){
+    public static final Logger LOGGER = LogManager.getLogger(ArcanaNaturalae.class);
+    public static final CreativeTabs TAB = new CreativeTabs("arcananaturalae"){
         @Override
         public Item getTabIconItem(){
             return Items.diamond;
@@ -46,17 +46,17 @@ public final class FloralArcana{
 
     @EventHandler
     public void init(FMLInitializationEvent e){
-        FABlocks.init();
-        FAItems.init();
-        FATiles.init();
+        ANBlocks.init();
+        ANItems.init();
+        ANTiles.init();
 
-        FMLInterModComms.sendMessage("Waila", "register", "floralarcana.client.waila.WailaProvider.create");
+        FMLInterModComms.sendMessage("Waila", "register", "arcananaturalae.client.waila.WailaProvider.create");
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent e){
-        FAPacketHandler.init();
-        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new FAGuiHandler());
+        ANPacketHandler.init();
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new ANGuiHandler());
     }
 
     @EventHandler

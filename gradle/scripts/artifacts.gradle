@@ -1,6 +1,6 @@
 task devJar(type: Jar){
     from(sourceSets.main.output){
-        include "floralarcana/**"
+        include "arcananaturalae/**"
         include "assets/**"
         include "mcmod.info"
     }
@@ -10,7 +10,7 @@ task devJar(type: Jar){
 
 task apiJar(type: Jar){
     from(sourceSets.main.java){
-        include "floralarcana/api/**"
+        include "arcananaturalae/api/**"
     }
 
     classifier = "api"
@@ -18,4 +18,5 @@ task apiJar(type: Jar){
 
 artifacts{
     archives devJar
+    archives apiJar
 }
